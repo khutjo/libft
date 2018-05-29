@@ -5,112 +5,100 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 07:46:47 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/28 10:24:55 by kmaputla         ###   ########.fr       */
+/*   Created: 2018/05/29 12:03:37 by kmaputla          #+#    #+#             */
+/*   Updated: 2018/05/29 17:08:10 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-static	int	dlen(const char *s, char c)
+static	int		dlen(char *a, char c)
 {
-	int index;
 	int count;
-	int state;
+	int index;
 
-	index = 0;
 	count = 0;
-	state = 0;
-	while (s[index] == c && s[index] != '\0')
+	index = 0;
+	while (a[index] == c && a[index])
 		index++;
-	if (s[index] == '\0')
-		return (1);
-	while (s[index] != '\0')
+	while (a[index])
 	{
-		if (s[index] != c)
+		if (a[index] != c)
 			count++;
-		while (s[index] != c && s[index] != '\0')
+		while (a[index] != c && a[index] != '\0')
 			index++;
-		while (s[index] == c && s[index] != '\0')
+		while (a[index] == c && a[index] != '\0')
 			index++;
 	}
 	return (count);
 }
 
-static	int	*slen(char *s, char c)
+static	char	**make(char *s, char c)
 {
+	int		len;
+	int		count;
+	int		index;
+	int		keep;
+	char	**hold;
 
-	int index;
-	int count;
-	int keep;
-	int *len;
-
-	len = 0;
-	keep = 1;
 	index = 0;
 	count = 0;
-	while (s[index] == c && s[index] != '\0')
+	len = dlen(s, c);
+	if (len == 0)
+		return (0);
+	while (s[index] == c && s[index])
 		index++;
-	len = (int *)malloc(sizeof(int) *dlen(s, c)
-	len[0] = dlen(s, c);
-	while (s[index] != '\0' && len[0] != 0)
+	if ((hold = (char **)malloc(sizeof(char **) * (1 + len))))
 	{
-		if (s[index] == c && count >= 0)
+		hold[len] = NULL;
+		while (s[index] != '\0')
 		{
-			len[keep] = count;
-			printf("%d", len[keep]);
-			keep++;
-			count = -1;
-		}
-		if (s[index] != c)
+			while (s[++index] != c && s[index] != '\0')
+				keep++;
+			if (!(hold[count] = (char *)malloc(sizeof(char*) *( 1 + keep))))
+				return (0);
+			hold[count][keep] = '\0';
+			keep = 0;
+			while (s[index] == c && s[index] != '\0')
+				index++;
 			count++;
-		index++;
-	}
-	return (len);
-}
-/*
-static	char arcpy(char **hold, char *s, char c)
-{
-	int inedex;
-	int keep;
-	int seg;
-
-	seg = 0;
-	keep = 0;
-	index = 0;
-	while (s[index] != '\0')
-	{
-		if (s[index] != c && keep >= 0)
-		{
-			hold[seg][keep] = s[index];
-			keep++;
 		}
-		if (s[index] == c && keep > 
-		 index++;*/
+	}
+	return (hold);
+}
 
-
-char		**ft_strsplit(char *s, char c)
+char **ft_strsplit(char *s, char c)
 {
 	char	**hold;
-	int		*len;
 	int		index;
-
-	hold = NULL;
+	int		keep;
+	int		count;
+	
 	index = 0;
+	keep = 0;
+	count = 0;
+	hold = NULL;
 	if (!s)
 		return (hold);
-	len = slen(s, c);
-	if (len[0] == 0)
+	hold = make(s, c);
+	if (hold == NULL)
 		return (hold);
-	if ((hold = (char **)malloc(sizeof(char *) * len[0])))
+	while (s[index] == c && s[index] != '\0')
+		index++;
+	while (s[index] != '\0')
 	{
-		while (index < len[0])
+		while (s[index] != c && s[index] != '\0')
 		{
-			hold[index] = (char *)malloc(sizeof(char) * len[1 + index]);
+			hold[keep][count] = s[index];
 			index++;
+			count++;
 		}
+		hold[keep][count] = '\0';
+		count = 0;
+		keep++;
+		while (s[index] == c && s[index] != '\0')
+			index++;
 	}
-	return (NULL);
+	return(hold);
 }

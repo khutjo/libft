@@ -6,19 +6,19 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 12:10:40 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/24 14:21:33 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/05/29 17:47:57 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int index;
+	int i;
 
-	if (!s)
-		return ;
-	index = -1;
-	while (s[++index] != '\0')
-		ft_putchar_fd((char)s[index], fd);
+	i = -1;
+	if (s)
+		while (s[++i] != '\0')
+			ft_putchar_fd(s[i], fd);
 }

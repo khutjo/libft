@@ -6,7 +6,7 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 12:33:28 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/28 09:23:44 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/05/29 17:50:52 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	index;
 	int		count;
-	int		index2;
 
 	count = 0;
 	index = 0;
-	index2 = 0;
 	while (dst[index] != '\0' && index < dstsize)
 	{
 		index++;
