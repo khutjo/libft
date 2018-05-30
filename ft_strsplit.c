@@ -6,30 +6,38 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:03:37 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/29 17:08:10 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/05/30 10:33:11 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-static	int		dlen(char *a, char c)
+static	int		skip(char *s, char c, int place, int state)
+{
+	if (state == 0)
+		while (s[place] != c && s[place] != '\0')
+			place++;
+	if (state == 1)
+		while (s[place] == c && s[place] != '\0')
+			place++;
+	return (place);
+}
+
+static	int		dlen(char *s, char c)
 {
 	int count;
 	int index;
 
 	count = 0;
 	index = 0;
-	while (a[index] == c && a[index])
-		index++;
-	while (a[index])
+	index = skip(s, c, index, 1);
+	while (s[index])
 	{
-		if (a[index] != c)
+		if (s[index] != c)
 			count++;
-		while (a[index] != c && a[index] != '\0')
-			index++;
-		while (a[index] == c && a[index] != '\0')
-			index++;
+		index = skip(s, c, index, 0);
+		index = skip(s, c, index, 1);
 	}
 	return (count);
 }
@@ -44,61 +52,48 @@ static	char	**make(char *s, char c)
 
 	index = 0;
 	count = 0;
+	hold = NULL;
 	len = dlen(s, c);
-	if (len == 0)
-		return (0);
-	while (s[index] == c && s[index])
-		index++;
-	if ((hold = (char **)malloc(sizeof(char **) * (1 + len))))
+	if ((hold = (char **)malloc(sizeof(char **) * (1 + len))) && len != 0)
 	{
 		hold[len] = NULL;
 		while (s[index] != '\0')
 		{
+			index = skip(s, c, index, 1);
 			while (s[++index] != c && s[index] != '\0')
 				keep++;
-			if (!(hold[count] = (char *)malloc(sizeof(char*) *( 1 + keep))))
-				return (0);
-			hold[count][keep] = '\0';
+			if ((hold[count] = (char *)malloc(sizeof(char*) * (1 + keep))))
+				hold[count++][keep] = '\0';
 			keep = 0;
-			while (s[index] == c && s[index] != '\0')
-				index++;
-			count++;
+			index = skip(s, c, index, 1);
 		}
 	}
 	return (hold);
 }
 
-char **ft_strsplit(char *s, char c)
+char			**ft_strsplit(char *s, char c)
 {
 	char	**hold;
 	int		index;
 	int		keep;
 	int		count;
-	
+
 	index = 0;
 	keep = 0;
 	count = 0;
 	hold = NULL;
 	if (!s)
 		return (hold);
-	hold = make(s, c);
-	if (hold == NULL)
+	if (!(hold = make(s, c)))
 		return (hold);
-	while (s[index] == c && s[index] != '\0')
-		index++;
+	index = skip(s, c, index, 1);
 	while (s[index] != '\0')
 	{
 		while (s[index] != c && s[index] != '\0')
-		{
-			hold[keep][count] = s[index];
-			index++;
-			count++;
-		}
-		hold[keep][count] = '\0';
+			hold[keep][count++] = s[index++];
+		hold[keep++][count] = '\0';
 		count = 0;
-		keep++;
-		while (s[index] == c && s[index] != '\0')
-			index++;
+		index = skip(s, c, index, 1);
 	}
-	return(hold);
+	return (hold);
 }
