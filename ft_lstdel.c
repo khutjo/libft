@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 10:58:48 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 16:45:43 by kmaputla         ###   ########.fr       */
+/*   Created: 2018/05/30 17:17:10 by kmaputla          #+#    #+#             */
+/*   Updated: 2018/05/30 17:29:02 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+static	void	del(void delc, size_t dels)
 {
-	unsigned int index;
+	ft_memdel(delc);
+	dels = NULL;
+}
 
-	index = -1;
-	if (!s)
-		return ;
-	while (s[++index] != '\0')
-		f(&s[index]);
+void	t_list(t_list **alst, void (del)(void *, size_t))
+{
+	t_list *hold;
+
+	while (alst != NULL)
+	{
+		
+		hold = alst->next;
+		alst = alst->next;
+		del(hold->content, hold->content_size);
+		free(hold)
+	}
 }

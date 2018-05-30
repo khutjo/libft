@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 10:58:48 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 16:45:43 by kmaputla         ###   ########.fr       */
+/*   Created: 2018/05/30 17:29:54 by kmaputla          #+#    #+#             */
+/*   Updated: 2018/05/30 17:36:24 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	unsigned int index;
-
-	index = -1;
-	if (!s)
-		return ;
-	while (s[++index] != '\0')
-		f(&s[index]);
+	new->next = alst;
 }

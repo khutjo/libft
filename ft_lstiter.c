@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/21 10:58:48 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 16:45:43 by kmaputla         ###   ########.fr       */
+/*   Created: 2018/05/30 17:36:47 by kmaputla          #+#    #+#             */
+/*   Updated: 2018/05/30 17:39:20 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem)){
 {
-	unsigned int index;
-
-	index = -1;
-	if (!s)
-		return ;
-	while (s[++index] != '\0')
-		f(&s[index]);
+	while (lst != NULL)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

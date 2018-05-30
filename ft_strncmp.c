@@ -6,20 +6,21 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 12:34:58 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/23 07:57:29 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/05/30 16:46:55 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(char *s1, const char *s2, size_t n)
 {
 	size_t			idx;
 	unsigned char	*c_s1;
 	unsigned char	*c_s2;
 
 	idx = 0;
-	n--;
+//	n--;
 	c_s1 = (unsigned char *)s1;
 	c_s2 = (unsigned char *)s2;
 	while (c_s1[idx] == c_s2[idx] && idx < n &&\

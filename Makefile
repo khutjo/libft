@@ -1,9 +1,18 @@
-GCC =	gcc -c -Wall -Werror -Wextra 
-LIB = 	ar -rc
-SRT = 	ranlib
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/05/30 13:45:26 by kmaputla          #+#    #+#              #
+#    Updated: 2018/05/30 14:42:37 by kmaputla         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
-FILE =	ft_atoi.c\
+SRC =	ft_atoi.c\
 		ft_bzero.c\
 		ft_isalnum.c\
 		ft_isalpha.c\
@@ -109,13 +118,18 @@ FILE =	ft_atoi.c\
 		ft_tolower.o\
 		ft_toupper.o
 
-all:fclean
-	$(GCC) $(FILE)
-	$(LIB) $(NAME) $(OBJ)
-	$(SRT) $(NAME)
+all:$(NAME)
+
+$(NAME):$(OBJ)
+	ar -rc $(NAME) $(OBJ)
+
+$(OBJ):$(SRC)
+	gcc -c -Wall -Werror -Wextra $(SRC)
 
 fclean:clean
 	rm -f $(NAME)
 
 clean:
 	rm -f $(OBJ)
+
+re:fclean all
