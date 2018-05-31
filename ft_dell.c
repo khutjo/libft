@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_dell.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/30 17:36:47 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/31 09:20:49 by kmaputla         ###   ########.fr       */
+/*   Created: 2018/05/31 08:31:59 by kmaputla          #+#    #+#             */
+/*   Updated: 2018/05/31 08:39:44 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_dell(void content, size_t content_size)
 {
-	while (lst != NULL)
-	{
-		f(lst);
-		lst = lst->next;
-	}
+	ft_memdel(content);
+	content_size = NULL;
 }

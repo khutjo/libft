@@ -6,7 +6,7 @@
 #    By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 13:45:26 by kmaputla          #+#    #+#              #
-#    Updated: 2018/05/30 14:42:37 by kmaputla         ###   ########.fr        #
+#    Updated: 2018/05/31 15:10:09 by kmaputla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,13 @@ SRC =	ft_atoi.c\
 		ft_strsub.c\
 		ft_strtrim.c\
 		ft_tolower.c\
-		ft_toupper.c
+		ft_toupper.c\
+		ft_lstadd.c\
+		ft_lstnew.c\
+		ft_lstdel.c\
+		ft_lstdelone.c\
+		ft_lstiter.c\
+		ft_lstmap.c
 
  OBJ =	ft_atoi.o\
  		ft_bzero.o\
@@ -116,7 +122,13 @@ SRC =	ft_atoi.c\
 		ft_strsub.o\
 		ft_strtrim.o\
 		ft_tolower.o\
-		ft_toupper.o
+		ft_toupper.o\
+		ft_lstnew.o\
+		ft_lstadd.o\
+		ft_lstdel.o\
+		ft_lstdelone.o\
+		ft_lstiter.o\
+		ft_lstmap.o
 
 all:$(NAME)
 
