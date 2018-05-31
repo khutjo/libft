@@ -6,7 +6,7 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 09:48:16 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 13:32:11 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/05/31 16:49:08 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_memalloc(size_t size)
 
 	fresh = 0;
 	if ((fresh = (char *)malloc(sizeof(char) * size)))
-			ft_bzero(fresh, size);
+		ft_bzero(fresh, size);
 	return (fresh);
 }

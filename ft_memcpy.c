@@ -6,7 +6,7 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 08:45:54 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 16:41:55 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/05/31 17:07:38 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	c_src = (unsigned char *)src;
 	if (n == 0)
 		return (dst);
-	while (++index < n && c_src[index] != '\0')
+	while (++index < n)
 		c_dst[index] = c_src[index];
-	c_dst[index] = '\0';
-	return (c_dst);
+	return (dst);
 }
