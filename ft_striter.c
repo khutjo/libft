@@ -6,17 +6,13 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:58:48 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 16:45:43 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/01 15:22:53 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	unsigned int index;
-
-	index = -1;
-	if (!s)
-		return ;
-	while (s[++index] != '\0')
-		f(&s[index]);
+	if (s && f)
+		while (*s)
+			f(s++);
 }

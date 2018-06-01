@@ -6,17 +6,16 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 11:38:56 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 16:43:55 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/01 15:23:36 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int index;
+	int i;
 
-	index = -1;
-	if (!s)
-		return ;
-	while (s[++index] != '\0')
-		f(index, &s[index]);
+	i = 0;
+	if (s && f)
+		while (*s)
+			f(i++, s++);
 }

@@ -6,7 +6,7 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:03:37 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/30 10:33:11 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/01 16:25:43 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static	char	**make(char *s, char c)
 	count = 0;
 	hold = NULL;
 	len = dlen(s, c);
-	if ((hold = (char **)malloc(sizeof(char **) * (1 + len))) && len != 0)
+	if (len != 0 && (hold = (char **)malloc(sizeof(char **) * (1 + len))))
 	{
 		hold[len] = NULL;
 		while (s[index] != '\0')
