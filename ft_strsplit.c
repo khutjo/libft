@@ -6,7 +6,7 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:03:37 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/01 16:25:43 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/03 13:31:08 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,18 @@ static	char	**make(char *s, char c)
 	return (hold);
 }
 
+static	char	**nothing(void)
+{
+	char **hold;
+
+	hold = NULL;
+	if ((hold = (char **)malloc(sizeof(char **) * 1)))
+	{
+		hold[0] = NULL;
+	}
+	return (hold);
+}
+
 char			**ft_strsplit(char *s, char c)
 {
 	char	**hold;
@@ -85,7 +97,7 @@ char			**ft_strsplit(char *s, char c)
 	if (!s)
 		return (hold);
 	if (!(hold = make(s, c)))
-		return (hold);
+		return (nothing());
 	index = skip(s, c, index, 1);
 	while (s[index] != '\0')
 	{

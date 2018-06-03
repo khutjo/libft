@@ -6,7 +6,7 @@
 #    By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 13:45:26 by kmaputla          #+#    #+#              #
-#    Updated: 2018/05/31 16:21:04 by kmaputla         ###   ########.fr        #
+#    Updated: 2018/06/03 14:30:21 by kmaputla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -145,3 +145,14 @@ clean:
 	rm -f $(OBJ)
 
 re:fclean all
+
+norm:
+	norminette ft_atoi.c
+	norminette ft_bzero.c
+	norminette ft_i*.c
+	norminette ft_lst*.c
+	norminette ft_mem*.c
+	norminette ft_put*.c
+	norminette ft_str*.c
+	norminette ft_to*.c
+	norminette libft.h
