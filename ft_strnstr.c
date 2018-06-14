@@ -6,11 +6,11 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 16:20:11 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/01 13:59:02 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:02:42 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 static	int	handler(const char *str1, const char *str2, int hold, int len)
 {

@@ -6,19 +6,14 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 09:25:06 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/24 11:28:23 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:14:26 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl(const char *s)
 {
-	int index;
-
-	index = -1;
-	if (s != 0)
-		while (s[++index] != '\0')
-			write(1, &s[index], 1);
+	ft_putstr(s);
 	write(1, "\n", 1);
 }

@@ -6,7 +6,7 @@
 #    By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 13:45:26 by kmaputla          #+#    #+#              #
-#    Updated: 2018/06/03 14:30:21 by kmaputla         ###   ########.fr        #
+#    Updated: 2018/06/13 10:57:56 by kmaputla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -136,7 +136,7 @@ $(NAME):$(OBJ)
 	ar -rc $(NAME) $(OBJ)
 
 $(OBJ):$(SRC)
-	gcc -c -Wall -Werror -Wextra $(SRC)
+	gcc -c -Wall -Werror -Wextra -g3 $(SRC)
 
 fclean:clean
 	rm -f $(NAME)

@@ -6,11 +6,12 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 08:42:57 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/01 11:01:32 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 16:08:07 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 static int	check(char *str)
 {
@@ -32,14 +33,12 @@ static int	check(char *str)
 
 int			ft_atoi(const char *str)
 {
-	int index;
-	int num;
-	int sign;
-	int exit_kick;
+	int		index;
+	long	num;
+	int		sign;
 
 	num = 0;
 	sign = 0;
-	exit_kick = 0;
 	index = check((char *)str);
 	if (str[index] == '-' || str[index] == '+')
 		sign = str[index++];
@@ -48,13 +47,12 @@ int			ft_atoi(const char *str)
 		num *= 10;
 		num += str[index] - '0';
 		index++;
-		exit_kick++;
+		if (num < 0 && sign == '-')
+			return (0);
+		else if (num < 0)
+			return (-1);
 	}
 	if (sign == '-')
 		num *= -1;
-	if (exit_kick > 10 && (sign == 0 || sign == '+'))
-		num = -1;
-	else if (exit_kick > 10)
-		num = 0;
-	return (num);
+	return ((int)num);
 }

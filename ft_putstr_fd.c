@@ -6,11 +6,10 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 12:10:40 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/29 17:47:57 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:26:24 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)

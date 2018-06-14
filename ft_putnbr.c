@@ -6,11 +6,11 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 09:28:30 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/24 11:28:36 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:25:30 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putnbr(int n)
 {
@@ -22,7 +22,7 @@ void	ft_putnbr(int n)
 	if (hold < 0)
 	{
 		hold *= -1;
-		write(1, "-", 1);
+		ft_putchar('-');
 	}
 	index = hold % 10;
 	hold /= 10;

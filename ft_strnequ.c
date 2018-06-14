@@ -6,7 +6,7 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 11:59:02 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/03 12:17:29 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 16:27:42 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t index;
-
-	index = 0;
 	if ((s1 && !s2) || (s2 && !s1))
 		return (0);
 	if (!s1 && !s2)

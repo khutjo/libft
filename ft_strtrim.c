@@ -6,12 +6,11 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 15:27:06 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/01 11:56:03 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:11:00 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static	int	flag(char c)
 {

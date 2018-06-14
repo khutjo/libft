@@ -6,11 +6,11 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:36:43 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/22 09:55:22 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 16:23:09 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

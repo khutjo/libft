@@ -6,14 +6,13 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:03:37 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/03 13:31:08 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:09:14 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static	int		skip(char *s, char c, int place, int state)
+static	int		skip(char const *s, char c, int place, int state)
 {
 	if (state == 0)
 		while (s[place] != c && s[place] != '\0')
@@ -24,7 +23,7 @@ static	int		skip(char *s, char c, int place, int state)
 	return (place);
 }
 
-static	int		dlen(char *s, char c)
+static	int		dlen(char const *s, char c)
 {
 	int count;
 	int index;
@@ -42,7 +41,7 @@ static	int		dlen(char *s, char c)
 	return (count);
 }
 
-static	char	**make(char *s, char c)
+static	char	**make(char const *s, char c)
 {
 	int		len;
 	int		count;
@@ -83,7 +82,7 @@ static	char	**nothing(void)
 	return (hold);
 }
 
-char			**ft_strsplit(char *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**hold;
 	int		index;

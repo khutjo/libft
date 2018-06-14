@@ -6,12 +6,10 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 08:44:18 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/05/28 11:04:28 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/14 17:27:21 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 static	int	numlen(long n, int *sign)
