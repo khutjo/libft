@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstputstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/23 09:19:07 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/15 16:56:38 by kmaputla         ###   ########.fr       */
+/*   Created: 2018/06/15 09:46:53 by kmaputla          #+#    #+#             */
+/*   Updated: 2018/06/15 10:06:07 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+void	ft_lstputstr(t_list *str)
 {
-	if (s)
-		ft_putstr_fd(s, 1);
+	if (str->content)
+		ft_putstr(str->content);
 }

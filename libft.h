@@ -6,14 +6,12 @@
 /*   By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 08:57:21 by kmaputla          #+#    #+#             */
-/*   Updated: 2018/06/13 10:59:02 by kmaputla         ###   ########.fr       */
+/*   Updated: 2018/06/15 11:33:36 by kmaputla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
-
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -59,7 +57,7 @@ void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
 void			ft_strclr(char *s);
-void			ft_striter(char *s, void(*f)(char *));
+void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -71,7 +69,7 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 void			ft_putchar(char c);
-void			ft_putstr(const char *s);
+void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);
@@ -84,4 +82,9 @@ void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int				ft_lstdelp(t_list **alst, int place);
+void			ft_lstputstr(t_list *str);
+void			ft_lstputlst(t_list **head);
+char			*ft_strjoinf(char *s1, char *s2);
+char			*ft_strchrf(char *s, char c, int side);
 #endif

@@ -6,7 +6,7 @@
 #    By: kmaputla <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/30 13:45:26 by kmaputla          #+#    #+#              #
-#    Updated: 2018/06/13 10:57:56 by kmaputla         ###   ########.fr        #
+#    Updated: 2018/06/15 11:35:00 by kmaputla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,12 @@ SRC =	ft_atoi.c\
 		ft_lstdel.c\
 		ft_lstdelone.c\
 		ft_lstiter.c\
-		ft_lstmap.c
+		ft_lstmap.c\
+		ft_lstputlst.c\
+		ft_lstputstr.c\
+		ft_lstdelp.c\
+		ft_strjoinf.c\
+		ft_strchrf.c
 
  OBJ =	ft_atoi.o\
  		ft_bzero.o\
@@ -128,7 +133,12 @@ SRC =	ft_atoi.c\
 		ft_lstdel.o\
 		ft_lstdelone.o\
 		ft_lstiter.o\
-		ft_lstmap.o
+		ft_lstmap.o\
+		ft_lstputlst.o\
+		ft_lstputstr.o\
+		ft_lstdelp.o\
+		ft_strjoinf.o\
+		ft_strchrf.o
 
 all:$(NAME)
 
@@ -143,6 +153,8 @@ fclean:clean
 
 clean:
 	rm -f $(OBJ)
+
+f:all clean
 
 re:fclean all
 
